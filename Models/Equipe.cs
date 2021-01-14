@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using E_Players_AspNetCore.Interfaces;
@@ -61,7 +62,11 @@ namespace E_Players_AspNetCore.Models
                 Equipe equipe = new Equipe();
 
                 //Alimentamos o obj equipe
-                equipe.IdEquipe = int.Parse(linha [0]);
+              
+              
+              
+              
+                equipe.IdEquipe = Int32.Parse(linha [0]);
                 equipe.Nome = linha [1];
                 equipe.Imagem = linha [2];
 
