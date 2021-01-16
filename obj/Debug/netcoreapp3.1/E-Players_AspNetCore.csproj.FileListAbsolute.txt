@@ -35,3 +35,4 @@ C:\Users\caicm\Desktop\E-Players_AspNetCore\obj\Debug\netcoreapp3.1\E-Players_As
 C:\Users\caicm\Desktop\E-Players_AspNetCore\obj\Debug\netcoreapp3.1\E-Players_AspNetCore.pdb
 C:\Users\caicm\Desktop\E-Players_AspNetCore\obj\Debug\netcoreapp3.1\E-Players_AspNetCore.genruntimeconfig.cache
 C:\Users\caicm\Desktop\E-Players_AspNetCore\obj\Debug\netcoreapp3.1\E-Players_AspNetCore.csproj.CopyComplete
+C:\Users\caicm\Desktop\E-Players_AspNetCore\obj\Debug\netcoreapp3.1\Razor\Views\Jogador\Index.cshtml.g.cs

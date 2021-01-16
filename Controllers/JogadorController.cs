@@ -14,7 +14,7 @@ namespace E_Players_AspNetCore_main.Controllers
         Jogador jogadorModel = new Jogador();
 
         //httplocalhost/Listar
-        [Route("ListarJogadores")]
+        [Route("Listar")]
         public IActionResult Index()
 
         
@@ -26,7 +26,7 @@ namespace E_Players_AspNetCore_main.Controllers
         }
 
         //httplocalhost/CadastrarJogadores
-
+        [Route("CadastrarJogador")]
         public IActionResult Cadastrar(IFormCollection form)
         {
             // Criamos uma nova instância de Equipe
@@ -42,7 +42,7 @@ namespace E_Players_AspNetCore_main.Controllers
             jogadorModel.Create(novoJogador);
             ViewBag.Jogadores = jogadorModel.ReadAll();
 
-            return LocalRedirect("~/Jogador/ListarJogadores");
+            return LocalRedirect("~/Jogadores/Listar");
 
                 
             }
