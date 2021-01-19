@@ -22,7 +22,7 @@ namespace E_Players_AspNetCore.Models
 
         public string Prepare(  Equipe e)
         {
-            return $"{e.IdEquipe}; {e.Nome}; {e.Imagem}";
+            return $"{e.IdEquipe};{e.Nome};{e.Imagem}";
         }
         public void Create(Equipe e)
         {

@@ -7,17 +7,13 @@ namespace E_Players_AspNetCore.Models
 {
     public class Jogador : EPlayersBase , IJogador
     {
-        public Jogador(int idJogador, string nome, int idEquipe) 
-        {
-            this.IdJogador = idJogador;
-                this.Nome = nome;
-                this.IdEquipe = idEquipe;
-               
-        }
-                public int IdJogador { get; set; }
-        public string Nome { get; set; }
-        public int IdEquipe { get; set; }
         
+         public int IdJogador { get; set; }
+        public string Nome { get; set; }
+        
+        public string Email { get; set; }
+        public string Senha { get; set; }
+        public int IdEquipe { get; set; }
         private const string PATH = "Database/Jogador.csv";
 
         public Jogador(){
@@ -26,7 +22,7 @@ namespace E_Players_AspNetCore.Models
 
         public string Prepare( Jogador j)
         {
-            return $"{j.IdJogador}; {j.Nome}; {j.IdEquipe}";
+            return $"{j.IdJogador};{j.Nome};{j.Email};{j.Senha};{j.IdEquipe}";
         }
 
         public void Create(Jogador j)
@@ -67,7 +63,8 @@ namespace E_Players_AspNetCore.Models
 
                 jogador.IdJogador = Int32.Parse(linha [0]);
                 jogador.Nome = linha [1];
-                jogador.IdEquipe= Int32.Parse(linha [2]);
+                jogador.Email = linha[2];
+                jogador.Senha = linha[3];
 
                 // adicionamos a equipe na lista de equipes
 

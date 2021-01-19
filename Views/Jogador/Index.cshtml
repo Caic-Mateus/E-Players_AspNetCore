@@ -1,35 +1,61 @@
 @model Jogador
 @{
-    ViewData["Títle"] = "Jogador";
+    ViewData["Title"] = "Jogadores";
 }
 
-<form method= "POST" action='Url.Action("CadastrarJogador")' enctype="multipart/form-data">
-    <label>ID Jogador</label>
-    <input type="text" name= "IdJogador"/>
+<div class="titulo_pagina">
+    <h1>cadastro de @ViewData["Title"]</h1>
+</div>
 
-    <label >Nome</label>
-    <input type="text" name= "Nome"/>
+<form method="POST" action='@Url.Action("Cadastrar")' class="cadastro">
 
-    <label >ID Equipe</label>
-    <input type="text" name="IdEquipe"/>
+    <div class="campo">
+        <label>ID Jogador</label>
+        <input type="text" name="IdJogador" />
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <div class="campo">
+        <label>ID Equipe</label>
+        <select name="IdEquipe" id="IdEquipe">
+            <option value="0">Selecione uma opção abaixo...</option>
+            @foreach (var item in ViewBag.Equipes)
+            {
+                <option value="@item.IdEquipe">@item.Nome</option>                
+            }
+        </select>
+    </div>
+
+
+    <div class="campo">
+        <label>Nome</label>
+        <input type="text" name="Nome" />
+    </div>
+
+    <div class="campo">
+        <label>Email</label>
+        <input type="text" name="Email" />
+    </div>
+
+    <div class="campo">
+        <label>Senha</label>
+        <input type="password" name="Senha" />
+    </div>
+
+    <button class="gradient btn" type="submit">Cadastrar</button>
 </form>
 
 <table class="table table-striped table-responsive">
     <thead>
-        <th>ID Jogador</th>
+        <th>ID</th>
         <th>Nome</th>
-        <th>ID Equipe</th>
+        <th>Email</th>
     </thead>
     <tbody>
-        @foreach (Jogador jogador in ViewBag.Jogadores)
-        {
+        @foreach(Jogador j in ViewBag.Jogadores){
             <tr>
-                <td>@jogador.IdJogador</td>
-                <td>@jogador.Nome</td>
-                <td>@jogador.IdEquipe</td>
-                <td><a asp-area="Link para excluir Jogador" asp-controller="Jogador" asp-action="Excluir" asp-route-id= "@jogador.IdJogador">Excluir</a></td>
+                <td>@j.IdJogador</td>
+                <td>@j.Nome</td>
+                <td>@j.Email</td>
             </tr>
         }
     </tbody>
